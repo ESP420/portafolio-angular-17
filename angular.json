@@ -30,7 +30,37 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/themes/custom/_dark-theme.scss",
+                "bundleName": "dark-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/custom/_indigo-pink-theme.scss",
+                "bundleName": "indigo-pink-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/custom/_deeppurple-amber-theme.scss",
+                "bundleName": "deeppurple-amber-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/custom/_pink-bluegrey-theme.scss",
+                "bundleName": "pink-blueGrey-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/custom/_purple-green-theme.scss",
+                "bundleName": "purple-green-theme",
+                "inject": false
+              }  ,
+              {
+                "input": "src/themes/custom/_gray-theme.scss",
+                "bundleName": "gray-theme",
+                "inject": false
+              }  
             ],
             "scripts": []
           },
@@ -90,7 +120,32 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/themes/custom/_dark-theme.scss",
+                "bundleName": "dark-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/custom/_indigo-pink-theme.scss",
+                "bundleName": "indigo-pink-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/custom/_deeppurple-amber-theme.scss",
+                "bundleName": "deeppurple-amber-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/custom/_pink-bluegrey-theme.scss",
+                "bundleName": "pink-bluegrey-theme",
+                "inject": false
+              },
+              {
+                "input": "src/themes/custom/_purple-green-theme.scss",
+                "bundleName": "purple-green-theme",
+                "inject": false
+              }             
             ],
             "scripts": []
           }

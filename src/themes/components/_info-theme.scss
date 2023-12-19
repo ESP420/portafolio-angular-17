@@ -1,0 +1,420 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($light, $theme) {
+    // Get the color config from the theme.
+    $color-config: mat.get-color-config($theme);
+
+    // Get the primary color palette from the color-config.
+    $primary-palette: map.get($color-config, 'primary');
+    $accent-palette: map.get($color-config, 'accent');
+    $warn-palette: map.get($color-config, 'warn');
+
+    .profile-user-info {
+        display: table;
+        width: 98%;
+        width: calc(100% - 24px);
+        margin: 0 auto;
+    }
+
+    .profile-info-row {
+        display: table-row;
+    }
+
+    .profile-info-name {
+        text-align: right;
+        padding: 6px 10px 6px 4px;
+        color: mat.get-color-from-palette($primary-palette);
+        background-color: transparent;
+        border-top: 1px dotted #d5e4f1;
+        display: table-cell;
+        width: 160px;
+        vertical-align: middle;
+    }
+
+    .profile-info-name-sm {
+        text-align: right;
+        padding: 6px 10px 6px 4px;
+        color: mat.get-color-from-palette($primary-palette);
+        background-color: transparent;
+        border-top: 1px dotted #d5e4f1;
+        display: table-cell;
+        width: 110px;
+        vertical-align: middle;
+    }
+
+    .profile-info-value {
+        display: table-cell;
+        padding: 6px 4px 6px 6px;
+        border-top: 1px dotted #d5e4f1;
+    }
+
+    .profile-info-value>span+span:before {
+        display: inline;
+        content: ",";
+        margin-left: 1px;
+        margin-right: 3px;
+        color: #666;
+        border-bottom: 1px solid #fff;
+    }
+
+    .profile-info-value>span+span.editable-container:before {
+        display: none;
+    }
+
+    .profile-info-row:first-child .profile-info-name {
+        border-top: none;
+    }
+
+    .profile-info-row:first-child .profile-info-value {
+        border-top: none;
+    }
+
+    .profile-user-info-striped {
+        border: 1px solid #dcebf7;
+    }
+
+    .profile-user-info-striped .profile-info-name {
+        color: mat.get-color-from-palette($primary-palette, if($light, '700-contrast', '100-contrast'));
+        background-color: mat.get-color-from-palette($primary-palette);
+        border-top: 1px solid #f7fbff;
+    }
+
+    .profile-user-info-striped .profile-info-value {
+        border-top: 1px dotted #dcebf7;
+        padding-left: 12px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        .profile-info-name {
+            width: 80px;
+        }
+
+    }
+
+    //border for cards 
+    .company-view .card-body {
+        border: solid 1px mat.get-color-from-palette($primary-palette);
+    }
+
+    .company-view .card-body> :first-child:before,
+    .card-body> :first-child:after {
+        width: 20px;
+        height: 20px;
+        border-color: mat.get-color-from-palette($primary-palette);
+        border-style: solid;
+        content: " ";
+        margin: -2px;
+    }
+
+    //new sizes for font icons whit mat-icon
+    .fa-1x {
+        font-size: 1em;
+        height: 15px;
+    }
+
+    .fa-1_5x {
+        font-size: 1.5em;
+        height: 20px;
+    }
+
+    .fa-2x {
+        height: 28px;
+    }
+
+    .fa-2x {
+        font-size: 2em;
+    }
+
+    .fa-3x {
+        font-size: 3em;
+    }
+
+    .fa-4x {
+        font-size: 4em;
+    }
+
+    .fa-5x {
+        font-size: 5em;
+    }
+
+    .fa-6x {
+        font-size: 6em;
+    }
+
+    .fa-7x {
+        font-size: 7em;
+    }
+
+    .fa-8x {
+        font-size: 8em;
+    }
+
+    .fa-9x {
+        font-size: 9em;
+    }
+
+    .fa-10x {
+        font-size: 10em;
+    }
+
+
+
+    .list-sidebar {
+        mat-list-item {
+            height: 40px !important;
+        }
+
+        mat-icon {
+            scale: (0.85);
+        }
+    }
+
+    .agil-sidebar {
+
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: rgb(85, 85, 85, 0);
+            border-radius: 50px;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: rgb(85, 85, 85, 0.4);
+            border-radius: 50px;
+        }
+    }
+
+    .content-table::-webkit-scrollbar {
+        width: 6px;
+        overflow-y: scroll;
+        background: grey;
+        box-shadow: inset 0 0 4px #707070;
+    }
+    .content-table::-webkit-scrollbar-thumb {
+        background: mat.get-color-from-palette($primary-palette) !important;
+        border-radius: 10px;
+    }
+    // contenido sweetAlert
+    .content-sweet::-webkit-scrollbar {
+        width: 6px;
+        overflow-y: scroll;
+        background: grey;
+        box-shadow: inset 0 0 4px #707070;
+    }
+    .content-sweet::-webkit-scrollbar-thumb {
+        background: mat.get-color-from-palette($primary-palette) !important;
+        border-radius: 10px;
+    }
+    .content-sweet {
+        width: auto;
+        height: 150px;
+        border: 1px solid mat.get-color-from-palette($primary-palette);
+        overflow: scroll;
+    }
+    
+
+    .custom-excel-table {
+        .popover {
+            mat-card {
+                display: unset !important;
+            }
+        }
+
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: mat.get-color-from-palette($primary-palette);
+            border-radius: 50px;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: mat.get-color-from-palette($primary-palette);
+            border-radius: 50px;
+        }
+
+        .popover {
+            mat-card {
+                display: unset !important;
+            }
+        }
+
+        .pageContainer {
+            width: 100%;
+            height: 100%;
+        }
+
+        .activeCell {
+            background-color: mat.get-color-from-palette($primary-palette, 100);
+            ;
+        }
+
+        .example-container {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            overflow: auto;
+        }
+
+        .mat-form-field-wrapper {
+            padding-bottom: 0px !important;
+        }
+
+        .mat-table {
+            display: table;
+            padding: 5px;
+            border: none;
+            border-radius:20px;
+            width: 100%;
+
+            >.mat-header-row,
+            >.mat-row {
+                display: table-row;
+                padding: 0 12px;
+                border: 1px solid mat.get-color-from-palette($primary-palette, 100);
+                min-height: 24px;
+                min-width: 150px;
+                background-color: mat.get-color-from-palette($primary-palette, if($light, '700-contrast', '100-contrast'));
+                ;
+
+                >.mat-header-cell {
+                    display: table-cell;
+                    border: 1px solid rgba(0, 0, 0, 0.54);
+                    padding: 0 0.5em;
+                    min-width: 150px;
+                    vertical-align: middle;
+                    text-align: center;
+                    color: rgba(0, 0, 0, 0.54);
+                    font-size: 13px;
+                    background-color: mat.get-color-from-palette($primary-palette, 100);
+                    border-bottom: 1px solid rgba(96, 96, 96, 0.12);
+                    cursor: auto;
+                }
+
+                >.mat-cell {
+                    display: table-cell;
+                    min-width: 150px;
+                    border: 1px solid mat.get-color-from-palette($primary-palette, 100);
+                    padding: 0;
+                    vertical-align: middle;
+                    text-align: center;
+                    color: mat.get-color-from-palette($primary-palette, if($light, '100-contrast', '700-contrast'));
+                    font-size: 13px;
+                    cursor: auto;
+                }
+            }
+        }
+
+     
+        .cell-value {
+            color: mat.get-color-from-palette($primary-palette, if($light, '100-contrast', '700-contrast'));
+            font-size: 0.8vw;
+
+            &:hover {
+                color: rgb(0, 105, 146)
+            }
+        }
+    }
+
+    #history {
+        ::-webkit-scrollbar:horizontal {
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb:horizontal {
+            background: mat.get-color-from-palette($primary-palette) !important;
+            border-radius: 10px;
+        }
+
+        .mat-table {
+            overflow-x: scroll;
+        }
+
+        .mat-cell,
+        .mat-header-cell {
+            word-wrap: initial;
+            display: table-cell;
+            padding: 0px 10px;
+            line-break: unset;
+            width: 100%;
+        }
+
+        .mat-row,
+        .mat-header-row {
+            display: table-row;
+        }
+
+
+    }
+
+    .mat-column-position {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 5% !important;
+        width: 5% !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        word-break: break-word;
+
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    .mat-column-date {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 100px !important;
+        width: 100px !important;
+        text-align: center;
+    }
+
+    .history-tab .mat-tab-body-content {
+        overflow: hidden !important;
+    }
+
+    //inventory list edit
+    .inventory-list {
+        .mat-table {
+            .mat-form-field-appearance-outline .mat-form-field-wrapper {
+                margin: 0 0;
+            }
+
+            .mat-form-field-wrapper {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+
+
+/// /* end mat info */
+@mixin typography($theme) {
+    // Get the typography config from the theme.
+    $typography-config: mat.get-typography-config($theme);
+
+    .info-data {
+        font-family: mat.font-family($typography-config);
+    }
+}
+
+@mixin theme($light, $theme) {
+    $color-config: mat.get-color-config($theme);
+
+    @if $color-config !=null {
+        @include color($light, $theme);
+    }
+
+    $typography-config: mat.get-typography-config($theme);
+
+    @if $typography-config !=null {
+        @include typography($theme);
+    }
+}

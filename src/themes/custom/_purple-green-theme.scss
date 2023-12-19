@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use '../components/switches-theme' as switch;
+@use '../components/info-theme' as info;
+@use '../palette/_palette.scss';
+@import '../palette/styles.scss';
+
+$dark-palette: palette.get-palette(false,"purple-green","light-green","red");
+$dark-theme: mat.define-dark-theme(palette.get-theme($dark-palette));
+
+@include style-theme(true,$dark-theme, $dark-palette);
+
+/* $custom-background-color: #b3b3b5 !important;
+$dark-theme: palette.modify-background($dark-theme,$custom-background-color); */
+@include mat.all-component-themes($dark-theme);
+@include info.theme(true,$dark-theme);
+@include switch.theme(true,$dark-theme);

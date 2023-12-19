@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use '../components/switches-theme' as switch;
+@use '../components/info-theme' as info;
+@use '../palette/_palette.scss';
+@import '../palette/styles.scss';
+
+
+$light-palette: palette.get-palette(true,"light-blue","light-green","red");
+$light-theme: mat.define-light-theme(palette.get-theme($light-palette));
+
+
+@include style-theme(true,$light-theme, $light-palette);
+@include mat.all-component-themes($light-theme);
+@include info.theme(true,$light-theme);
+@include switch.theme(true,$light-theme);
